@@ -123,7 +123,9 @@ class EasyLoadingTheme {
           ? AlignmentDirectional.bottomCenter
           : (position == EasyLoadingToastPosition.top
               ? AlignmentDirectional.topCenter
-              : AlignmentDirectional.center);
+              : (position == EasyLoadingToastPosition.bottomEnd
+              ? AlignmentDirectional.bottomEnd
+              : AlignmentDirectional.center));
 
   /// display duration
   static Duration get displayDuration => EasyLoading.instance.displayDuration;

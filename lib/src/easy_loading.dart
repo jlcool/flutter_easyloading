@@ -45,6 +45,7 @@ enum EasyLoadingToastPosition {
   top,
   center,
   bottom,
+  bottomEnd
 }
 
 /// loading animation
@@ -374,10 +375,11 @@ class EasyLoading {
     EasyLoadingToastPosition? toastPosition,
     EasyLoadingMaskType? maskType,
     bool? dismissOnTap,
+    bool autoHide=true
   }) {
     return _instance._show(
       status: status,
-      duration: duration ?? EasyLoadingTheme.displayDuration,
+      duration: autoHide?duration ?? EasyLoadingTheme.displayDuration:null,
       toastPosition: toastPosition ?? EasyLoadingTheme.toastPosition,
       maskType: maskType,
       dismissOnTap: dismissOnTap,
