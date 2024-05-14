@@ -63,10 +63,38 @@ class EasyLoadingProgressState extends State<EasyLoadingProgress> {
     return SizedBox(
       width: EasyLoadingTheme.indicatorSize,
       height: EasyLoadingTheme.indicatorSize,
-      child: _CircleProgress(
-        value: _value,
-        color: EasyLoadingTheme.progressColor,
-        width: EasyLoadingTheme.progressWidth,
+      child: Stack(
+        children: [
+
+          Positioned(
+            top: 0,
+            left: 0,
+            width: EasyLoadingTheme.indicatorSize,
+            height: EasyLoadingTheme.indicatorSize,
+            child: _CircleProgress(
+              value: _value,
+              color: EasyLoadingTheme.progressColor,
+              width: EasyLoadingTheme.progressWidth,
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            width: EasyLoadingTheme.indicatorSize,
+            height: EasyLoadingTheme.indicatorSize,
+            child:Center(
+              child: Text(
+                "${(_value*100).toStringAsFixed(0)}%",
+                style: EasyLoadingTheme.textStyle ??
+                    TextStyle(
+                      color: EasyLoadingTheme.textColor,
+                      fontSize: EasyLoadingTheme.fontSize,
+                    ),
+                textAlign: EasyLoadingTheme.textAlign,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
