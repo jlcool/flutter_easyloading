@@ -76,7 +76,7 @@ class EasyLoadingProgressState extends State<EasyLoadingProgress> {
               color: EasyLoadingTheme.progressColor,
               width: EasyLoadingTheme.progressWidth,
             ),
-          ),
+          ), 
           Positioned(
             top: 0,
             left: 0,
